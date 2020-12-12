@@ -34,7 +34,12 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->group('admin',function ($routes){
     $routes->get('/', 'Backend\AdminController::index');
-    $routes->get('product', 'Backend\Product::index');
+    $routes->group('product',function ($routes) {
+        $routes->get('/', 'Backend\Product::index');
+        $routes->match(['get','post'],'form(:any)', 'Backend\Product::form/$1');
+        $routes->post('update', 'Backend\Product::update');
+
+    });
 });
 
 

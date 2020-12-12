@@ -10,6 +10,7 @@ $settings = db_connect()->table('settings')->get()->getRow();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description" content="Admin, Dashboard, Bootstrap" />
+    <?= csrf_meta() ?>
     <link rel="shortcut icon" sizes="196x196" href="<?php echo base_url('assets');?>/images/logo.png">
     <title><?= $settings->title ?> - <?php echo (!empty($title)?$title:null) ?></title>
 
@@ -24,6 +25,8 @@ $settings = db_connect()->table('settings')->get()->getRow();
     <link rel="stylesheet" href="<?php echo base_url('assets');?>/css/app.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
+
+
     <script src="<?php echo base_url('assets/libs');?>/bower/breakpoints.js/dist/breakpoints.min.js"></script>
     <script>
         Breakpoints();
@@ -32,6 +35,7 @@ $settings = db_connect()->table('settings')->get()->getRow();
 
 <body class="menubar-left menubar-unfold menubar-light theme-primary">
 <!--============= start main area -->
+
 
 <!-- APP NAVBAR ==========-->
 <nav id="app-navbar" class="navbar navbar-inverse navbar-fixed-top primary">
@@ -337,12 +341,16 @@ $settings = db_connect()->table('settings')->get()->getRow();
 <!-- endbuild -->
 
 <!-- build:js <?php echo base_url('assets');?>/js/app.min.js -->
-<script src="<?php echo base_url('assets');?>/js/library.js"></script>
+<!-- <script src="<?php echo base_url('assets');?>/js/library.js"></script>  -->
+<?php echo view('layout/admin/includes/library');?>
 <script src="<?php echo base_url('assets');?>/js/plugins.js"></script>
 <script src="<?php echo base_url('assets');?>/js/app.js"></script>
 <!-- endbuild -->
 <script src="<?php echo base_url('assets/libs');?>/bower/moment/moment.js"></script>
 <script src="<?php echo base_url('assets/libs');?>/bower/fullcalendar/dist/fullcalendar.min.js"></script>
 <script src="<?php echo base_url('assets');?>/js/fullcalendar.js"></script>
+
+<?php echo $this->renderSection('js');?>
+
 </body>
 </html>
