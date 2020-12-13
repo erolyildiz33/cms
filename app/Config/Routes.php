@@ -38,6 +38,9 @@ $routes->group('admin',function ($routes){
         $routes->get('/', 'Backend\Product::index');
         $routes->match(['get','post'],'form(:any)', 'Backend\Product::form/$1');
         $routes->post('update', 'Backend\Product::update');
+        $routes->post('ranksetter', 'Backend\Product::ranksetter');
+        $routes->post('delete', 'Backend\Product::delete');
+        $routes->match(['get','post'],'image-form(:any)', 'Backend\Product::image_form/$1');
 
     });
 });

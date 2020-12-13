@@ -23,6 +23,7 @@ $settings = db_connect()->table('settings')->get()->getRow();
     <link rel="stylesheet" href="<?php echo base_url('assets');?>/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo base_url('assets');?>/css/core.css">
     <link rel="stylesheet" href="<?php echo base_url('assets');?>/css/app.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets');?>/css/sweetalert2.min.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
 
@@ -338,6 +339,7 @@ $settings = db_connect()->table('settings')->get()->getRow();
 <script src="<?php echo base_url('assets/libs');?>/bower/jquery-slimscroll/jquery.slimscroll.js"></script>
 <script src="<?php echo base_url('assets/libs');?>/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
 <script src="<?php echo base_url('assets/libs');?>/bower/PACE/pace.min.js"></script>
+<script src="<?php echo base_url('assets');?>/js/sweetalert2.all.min.js"></script>
 <!-- endbuild -->
 
 <!-- build:js <?php echo base_url('assets');?>/js/app.min.js -->
@@ -349,6 +351,7 @@ $settings = db_connect()->table('settings')->get()->getRow();
 <script src="<?php echo base_url('assets/libs');?>/bower/moment/moment.js"></script>
 <script src="<?php echo base_url('assets/libs');?>/bower/fullcalendar/dist/fullcalendar.min.js"></script>
 <script src="<?php echo base_url('assets');?>/js/fullcalendar.js"></script>
+<script src="<?php echo base_url('assets');?>/js/custom.js"></script>
 
 <?php echo $this->renderSection('js');?>
 

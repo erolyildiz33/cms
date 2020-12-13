@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: localhost
--- Üretim Zamanı: 12 Ara 2020, 01:07:09
+-- Üretim Zamanı: 14 Ara 2020, 00:52:45
 -- Sunucu sürümü: 5.7.31-log
 -- PHP Sürümü: 7.4.12
 
@@ -141,7 +141,32 @@ INSERT INTO `languages` (`id`, `phrase`, `turkish`, `english`) VALUES
 (21, 'status', 'Durum', 'Status'),
 (22, 'action', 'İşlem', 'Action'),
 (23, 'delete', 'Sil', 'Delete'),
-(24, 'edit', 'Düzenle', 'Edit');
+(24, 'edit', 'Düzenle', 'Edit'),
+(25, 'addnew', 'Yeni Ekle', 'Add New'),
+(26, 'noitemadd', 'Burada herhangi bir veri bulunmamaktadır. Eklemek için lütfen', 'There is no data here. To add, please'),
+(27, 'click', 'tıklayınız', 'click'),
+(28, 'alllist', 'Tüm Liste', 'All List'),
+(29, 'cancel', 'İptal', 'Cancel'),
+(30, 'submit', 'Kaydet', 'Submit'),
+(31, 'holdertitle', 'Başlık Giriniz', 'Please Input Title'),
+(32, 'holdertitlerequired', 'Başlık Alanı Zorunludur!', 'Required Title!'),
+(33, 'update', 'Güncelle', 'Update'),
+(34, 'newprooduct', 'Yeni Ürün Ekle', 'Add New Product'),
+(35, 'updateproduct', 'Ürün Güncelleme', 'Product Update'),
+(36, 'doyouwantdelete', 'Bunu Geri Alamayacaksınız!', 'You won\'t be able to revert this!'),
+(37, 'areyousure', 'Emin misiniz?', 'Are you sure?'),
+(38, 'yesdelete', 'Evet, Silinsin!', 'Yes, delete it!'),
+(39, 'deleted', 'Silindi!', 'Deleted!'),
+(40, 'havedeleted', 'Kayıt Başarıyla Silindi.', 'Your record has been deleted.'),
+(41, 'yes', 'Evet', 'Yes'),
+(42, 'no', 'Hayır', 'No'),
+(43, 'ok', 'Tamam', 'Okey'),
+(44, 'image', 'Resim', 'Image'),
+(45, 'images', 'Resimler', 'Images'),
+(46, 'back', 'Geri', 'Back'),
+(47, 'newprooductimage', 'Ürün Resimleri', 'Product Images'),
+(48, 'dropzonetitle', 'Dosyaları buraya bırakın veya yüklemek için tıklayın.', 'Drop files here or click to upload.'),
+(49, 'newprooductimageadd', 'Ürün Resim Ekleme', 'Add Product Images');
 
 -- --------------------------------------------------------
 
@@ -203,8 +228,19 @@ CREATE TABLE `products` (
   `description` text COLLATE utf8_turkish_ci,
   `rank` int(11) DEFAULT NULL,
   `isActive` tinyint(4) DEFAULT NULL,
-  `createdAt` datetime DEFAULT NULL
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `products`
+--
+
+INSERT INTO `products` (`id`, `url`, `title`, `description`, `rank`, `isActive`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(18, 'yeni-urun', 'Yeni Ürün', '<p>asdsad</p>', 0, 1, '2020-12-13 23:05:36', '2020-12-13 23:42:02', NULL),
+(19, 'urun-baslik-8', 'Ürün Başlık-8', '<p>asdsad</p>', 1, 1, '2020-12-13 23:05:42', '2020-12-13 23:42:02', NULL),
+(20, 'aaaaaaaaa', 'aaaaaaaaa', '<p>sadasd</p>', 2, 1, '2020-12-13 23:05:48', '2020-12-13 23:42:02', NULL);
 
 -- --------------------------------------------------------
 
@@ -487,7 +523,7 @@ ALTER TABLE `images`
 -- Tablo için AUTO_INCREMENT değeri `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `members`
@@ -511,7 +547,7 @@ ALTER TABLE `popups`
 -- Tablo için AUTO_INCREMENT değeri `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `product_images`
